@@ -1,11 +1,16 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import router from './routes/route.js';
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
+
+//midelworld
+app.use(express.json());
+app.use(cors());
 
 //routes 
 app.use("/",router)
